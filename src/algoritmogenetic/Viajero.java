@@ -5,7 +5,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
 
-public class Agente_Viajero extends JFrame implements Runnable{
+public class Viajero extends JFrame implements Runnable{
     Container c;
 	Mapa mapa;
 	JList Caminos;
@@ -18,9 +18,9 @@ public class Agente_Viajero extends JFrame implements Runnable{
 	float mat[][];
 	Tablero tab;
 	Thread hilo;
-	Agente_Viajero yo;
+	Viajero yo;
 	
-	Agente_Viajero()
+	Viajero()
 	{
 	  this.setTitle("AGENTE VIAJERO");
 	  c = this.getContentPane();
@@ -93,7 +93,6 @@ public class Agente_Viajero extends JFrame implements Runnable{
 	  		list.updateUI();
 	  		hilo = new Thread(yo);
 	  		hilo.start();
-	  	
 	  	}
 	  });
 	  
@@ -226,8 +225,6 @@ public  float getTotal()
 	    System.out.println (cad.substring(0,1) +" "+(i+1)+" "+m);
 	 	if (cad.startsWith(""+nodo_inicial))
 	 	{
-			
-			
 	 		if (m<=menor)
 	 		{
 	 			camino=i;
@@ -249,7 +246,7 @@ public void mostrar (String camino)
 	
 public static void main (String arg[])
 	{
-	   Agente_Viajero frame = new Agente_Viajero();
+	   Viajero frame = new Viajero();
 	   Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
 	   frame.setUndecorated(!true);
 	   frame.setSize(size.width,size.height);

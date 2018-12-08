@@ -32,14 +32,12 @@ class Mapa extends JPanel
 	   {
 	   	public void mouseMoved(MouseEvent e)
 	   	{
-	   	
 	   		X=e.getX()/20;
 	   		y=e.getY();
 	   		
 	   		Y= ((y-getHeight())*-1);
 	   	
-	   		repaint();
-	   		
+	   		repaint();	
 	   	}
 	   	
 	   });
@@ -60,7 +58,7 @@ class Mapa extends JPanel
 	   	    if(n_puntos==20)
 	   	    {
 	   	    	limite=true;
-	   	    	JOptionPane.showMessageDialog(null,"LLegaste al limite de nodos","Info",JOptionPane.INFORMATION_MESSAGE);
+	   	    	JOptionPane.showMessageDialog(null,"LLEGASTE AL LIMITE DE  NODOS","Info",JOptionPane.INFORMATION_MESSAGE);
 	   	    }
 	   	    
 	   	    }
@@ -86,7 +84,7 @@ class Mapa extends JPanel
 	
 	public void pintar(Graphics2D g)
 	{
-		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON); //para mejorar la calidad de la pintada	
+		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON); //Mejora la calidad de la pintada
 		g.setColor(Color.white);
 		g.fillRect(0,0,getWidth(),getHeight() );
 		g.setColor(Color.LIGHT_GRAY);
@@ -120,7 +118,6 @@ class Mapa extends JPanel
 	 return this.n_puntos;
 	}
 	
-	
 	public int getx(int n)
 	{
 		
@@ -137,9 +134,6 @@ class Mapa extends JPanel
 		this.result=true;
 		this.camino=camino;
 		repaint();
-	
-		
-		
 	}
 	
 	public void resultado(Graphics2D g )
@@ -160,7 +154,6 @@ class Mapa extends JPanel
 
 class Tablero extends JPanel
 {
-	
     JTextField m[][];
 		
 	Tablero ()
