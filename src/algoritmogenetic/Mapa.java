@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package algoritmogenetic;
 
-/**
- *
- * @author Jordy
- */
 import java.awt.*;
 import java.applet.*;
 import java.awt.event.*;
@@ -51,7 +42,6 @@ class Mapa extends JPanel
 	   		
 	   	}
 	   	
-	   	
 	   });
 	   
 	   this.addMouseListener(new MouseAdapter()
@@ -62,7 +52,6 @@ class Mapa extends JPanel
 	   	  {
 	   	  	if (!((X==24)||(Y/20==24)))
 	   	  	{
-	   	  	
 	   	  
 	   	    puntos[n_puntos++]=e.getPoint();
 	   	    pos.add("("+e.getX()/20+","+Y/20+")");
@@ -123,11 +112,7 @@ class Mapa extends JPanel
 			g.drawString(""+(i+1),(puntos[i].x-10) +9/2,(puntos[i].y-9)+15);
 			g.setColor(Color.black);
 			g.drawString(""+pos.elementAt(i),puntos[i].x-9,puntos[i].y-18);
-		}
-		
-		
-		
-			
+		}		
 		
 	}
 	public int getCamino()
@@ -170,8 +155,6 @@ class Mapa extends JPanel
 			
 		}
 	}
-
-
 	
 }
 
@@ -181,8 +164,7 @@ class Tablero extends JPanel
     JTextField m[][];
 		
 	Tablero ()
-	{
-		
+	{	
 	}
 	
 	public void setMatriz(float mat[][])
@@ -205,8 +187,7 @@ class Tablero extends JPanel
 		    }
 		}
 		
-		this.updateUI();
-		
+		this.updateUI();	
 	}
 
 }

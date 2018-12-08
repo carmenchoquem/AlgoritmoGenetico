@@ -1,18 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package algoritmogenetic;
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
-/**
- *
- * @author Jordy
- */
+
 public class Agente_Viajero extends JFrame implements Runnable{
     Container c;
 	Mapa mapa;
@@ -28,15 +20,13 @@ public class Agente_Viajero extends JFrame implements Runnable{
 	Thread hilo;
 	Agente_Viajero yo;
 	
-	
 	Agente_Viajero()
 	{
 	  this.setTitle("AGENTE VIAJERO");
 	  c = this.getContentPane();
 	  c.setLayout(null);
 	  yo=this;
-	 
-	  
+	
 	  Caminos = new JList();
 	  cam= new Vector();	
 	  tab = new Tablero();
@@ -59,12 +49,8 @@ public class Agente_Viajero extends JFrame implements Runnable{
 	  	      {
 	  	      	vec[i]=""+(i+1);
 	  	      	combo.addItem(vec[i]);
-	  	      	
-	  	      	
-			  }
-			  
-	  		
-	  	
+		      }
+			 
 	  		list.updateUI();
 		
 	  		list.setListData(cam);
@@ -130,8 +116,6 @@ public class Agente_Viajero extends JFrame implements Runnable{
 			{
 				String cad="";
 				
-				
-				
 						cad=""+cam.elementAt(i);
 						m=getValcad(cad);
 						System.out.println (cad.substring(0,1) +" "+(i+1)+" "+m);
@@ -144,17 +128,12 @@ public class Agente_Viajero extends JFrame implements Runnable{
 							menor=m;
 							System.out.println (" MENOR " +menor);
 							}
-
-				
-					
 					i++;
-			
-			
 				  
 		    }
 		    catch (Exception ex) 
 		    {
-		    	
+                        
 		    }
 		}
 		
@@ -189,19 +168,14 @@ public void Sig(int i, int n, int p, String acum)
         	if(acum.startsWith(""+nodo_inicial))
              cam.add(acum);
              else
-              return ;
-            
+              return ;   
         }
-        
-       
-    	
+      	
     }
 }
 
-
 public float getDistancia(String i, String j)
-{
-	
+{	
 	int a,b,c,d;
 	float r,r1;
 	a =mapa.getx(Integer.parseInt(i));
@@ -221,10 +195,8 @@ public void Matriz(int n)
     {  
     	for(int j=0;j<n;j++)
     	{
-    	    mat[i][j]=getDistancia(""+i,""+j);
-    	    
+    	    mat[i][j]=getDistancia(""+i,""+j);   	    
     	}
-    	
     } 	
 }
 
@@ -236,9 +208,7 @@ public float getValcad(String cadena)
    {
    	  a=Integer.parseInt(cadena.substring(i,i+1));
    	  b=Integer.parseInt(cadena.substring(i+1,i+2));
-   	  num=num+mat[a-1][b-1];
-   	 
-   	  
+   	  num=num+mat[a-1][b-1];	  
    }
   
    return num;	
@@ -266,7 +236,6 @@ public  float getTotal()
 	 		}
 	 	}else
 	 	return menor;
-	 	
 	 
 	 }
 	 
